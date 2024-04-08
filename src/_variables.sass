@@ -1,0 +1,41 @@
+html
+  font-size: 62.5%
+
+// Font
+$font: "Josefin Sans"
+// Font weight
+$normal-weight: 400
+$dark-weight: 700
+// Font Size
+$font-size: 1.8rem
+
+//General Colors
+$highlightColor: hsl(235, 19%, 35%)
+$checkColor: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+// Light Mode
+$primary-light: hsl(0, 0%, 98%)
+$second-light: hsl(236, 33%, 92%)
+$tertiary-light: hsl(233, 11%, 84%)
+$quaternary-light: hsl(236, 9%, 61%)
+$fifth-light: hsl(235, 19%, 35%)
+
+// Dark mode
+$primary-dark: hsl(235, 21%, 11%)
+$second-dark: hsl(235, 24%, 19%)
+$tertiary-dark: hsl(234, 39%, 85%)
+$hover-dark: hsl(236, 33%, 92%)
+$quaternary-dark: hsl(234, 11%, 52%)
+$fifth-dark: hsl(233, 14%, 35%)
+$sixth-dark: hsl(237, 14%, 26%)
+
+//Sizes
+$tablet: 768px
+$desktop: 1440px
+
+@mixin tablet
+  @media (min-width: $tablet)
+    @content
+
+@mixin desktop
+  @media (min-width: $desktop)
+    @content
