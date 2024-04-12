@@ -8,7 +8,10 @@
 body, #root
   width: 100%
   height: 100vh
-
+p
+  text-align: center
+  font-size: 1.2rem
+  color: $quaternary-light
 .light
   background-color: $second-light
   .header
@@ -76,9 +79,18 @@ body, #root
   padding: 1rem 2rem
   .todo:first-child
     border-radius: 10px 10px 0px 0px
-  .todo:last-child
-    border-radius: 0px 0px 10px 1rem
-    border: none
+  .listTodos__footer
+    display: flex
+    align-items: center
+    justify-content: space-between
+    background-color: $primary-light
+    padding: 1rem 2rem
+    border-radius: 0px 0px 10px 10px
+    span,button
+      font-size: 1.2rem
+      color: $quaternary-light
+    button
+      @include textButton()
 
 .todo
   display: flex
@@ -117,9 +129,30 @@ body, #root
       text-decoration: line-through
       color: $tertiary-light
       transition: all .5s
-
   img
     width: 1.5rem
+
+.navbar
+  display: flex
+  justify-content: center
+  width: 100%
+  ul
+    background: $primary-light
+    width: 87vw
+    margin: 0
+    padding: 1rem 2rem
+    display: flex
+    justify-content: center
+    gap: .5rem
+    border-radius: 10px
+    .navbar__item
+      list-style: none
+      button
+        color: $fifth-light
+        font-size: 1.4rem
+        @include textButton()
+      button:hover
+        color: $highlightColor
 
 .hidden
   visibility: hidden

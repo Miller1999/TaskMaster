@@ -10,7 +10,7 @@ $dark-weight: 700
 $font-size: 1.8rem
 
 //General Colors
-$highlightColor: hsl(235, 19%, 35%)
+$highlightColor: hsl(220, 98%, 61%)
 $checkColor: hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
 // Light Mode
 $primary-light: hsl(0, 0%, 98%)
@@ -39,3 +39,8 @@ $desktop: 1440px
 @mixin desktop
   @media (min-width: $desktop)
     @content
+
+@mixin textButton()
+  border: none
+  background: transparent
+  cursor: pointer
