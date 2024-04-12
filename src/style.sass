@@ -4,37 +4,95 @@
   font-size: $font-size
   box-sizing: border-box
   font-weight: $normal-weight
+  transition: all .3s ease
 
-body, #root
+main
   width: 100%
   height: 100vh
+
 p
   text-align: center
   font-size: 1.2rem
   color: $quaternary-light
+
 .light
   background-color: $second-light
   .header
     background-image: url("./assets/bg-mobile-light.jpg")
-
+    @include tablet
+      background-image: url("./assets/bg-desktop-light.jpg")
+  .input
+    background: $primary-light
+    input
+      background: $primary-light
+      color: $quaternary-light
+    .circle
+      border: 1px solid $quaternary-light
+  .listTodos__footer
+    background-color: $primary-light
+    span,button
+      color: $quaternary-light
+  .todo
+    background-color: $primary-light
+    border-bottom: 1px solid $tertiary-light
+    .circle
+      border: 1px solid $quaternary-light
+  .check
+    .todo__text
+      color: $tertiary-light
+  .navbar
+    ul
+      background: $primary-light
+      button
+        color: $fifth-light
 .dark
-  background-color: black
+  background-color: $second-dark
   .header
     background-image: url("./assets/bg-mobile-dark.jpg")
+    @include tablet
+      background-image: url("./assets/bg-desktop-dark.jpg")
+  .input
+    background: $primary-dark
+    input
+      background: $primary-dark
+      color: $quaternary-dark
+    .circle
+      border: 1px solid $quaternary-dark
+  .listTodos__footer
+    background-color: $primary-dark
+    span,button
+      color: $quaternary-dark
+  .todo
+    background-color: $primary-dark
+    border-bottom: 1px solid $sixth-dark
+    .circle
+      border: 1px solid $quaternary-dark
+  .check
+    .todo__text
+      color: $fifth-dark
+  .navbar
+    ul
+      background: $primary-dark
+      button
+        color: $fifth-dark
 
 .header
   display: flex
   flex-direction: column
+  align-items: center
+  justify-content: center
   height: 30vh
   background-position: center
   background-repeat: no-repeat
   background-size: cover
   padding: 2rem
-  gap: 2rem
+  gap: 3rem
   .title
     display: flex
     justify-content: space-between
     align-items: center
+    width: 100%
+    max-width: 400px
     h1
       display: inline
       color: $primary-light
@@ -42,6 +100,7 @@ p
       font-size: 3rem
       transform: translateY(5px)
       margin: 0rem
+      font-weight: $dark-weight
     button
       position: relative
       width: 2rem
@@ -59,36 +118,43 @@ p
     padding: 1rem
     gap: 1rem
     justify-content: center
-    background: white
     align-items: center
     border-radius: 5px
+    max-width: 400px
     .circle
       width: 2rem
       height: 2rem
       border-radius: 50%
-      border: 1px solid $quaternary-light
     input
       width: 80%
       padding-top: .5rem
       border: none
       outline: none
+.container__todos
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
 
 .listTodos
   display: flex
   flex-direction: column
+  align-items: center
   padding: 1rem 2rem
+  width: 100%
   .todo:first-child
     border-radius: 10px 10px 0px 0px
   .listTodos__footer
     display: flex
     align-items: center
+    width: 100%
+    max-width: 400px
     justify-content: space-between
-    background-color: $primary-light
     padding: 1rem 2rem
     border-radius: 0px 0px 10px 10px
+    height: 50px
     span,button
       font-size: 1.2rem
-      color: $quaternary-light
     button
       @include textButton()
 
@@ -98,9 +164,8 @@ p
   justify-content: space-between
   width: 100%
   padding: 1rem 2rem
-  background-color: $primary-light
   height: 50px
-  border-bottom: 1px solid $tertiary-light
+  max-width: 400px
   .todo__info
     display: flex
     align-items: center
@@ -115,7 +180,6 @@ p
     width: 2rem
     height: 2rem
     border-radius: 50%
-    border: 1px solid $quaternary-light
     display: flex
     justify-content: center
     align-items: center
@@ -127,7 +191,6 @@ p
       border: none
     .todo__text
       text-decoration: line-through
-      color: $tertiary-light
       transition: all .5s
   img
     width: 1.5rem
@@ -136,9 +199,10 @@ p
   display: flex
   justify-content: center
   width: 100%
+  max-width: 400px
+  padding: 1rem 2rem
   ul
-    background: $primary-light
-    width: 87vw
+    width: 100%
     margin: 0
     padding: 1rem 2rem
     display: flex
@@ -148,7 +212,6 @@ p
     .navbar__item
       list-style: none
       button
-        color: $fifth-light
         font-size: 1.4rem
         @include textButton()
       button:hover

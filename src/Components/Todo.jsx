@@ -4,19 +4,12 @@ const Todo = () => {
 	return (
 		<div className="todo">
 			<div
-				className="todo__info check"
+				className="todo__info"
 				onClick={(e) => {
-					console.log(e.target.parentNode.classList);
-					e.target.parentNode.classList.toggle("check");
+					e.target.parentElement.classList.toggle("check");
 				}}
 			>
-				<button
-					className="circle"
-					onClick={(e) => {
-						console.log(e.target.parentNode.classList);
-						e.target.parentNode.classList.toggle("check");
-					}}
-				></button>
+				<button className="circle"></button>
 				<p className="todo__text">Tarea</p>
 			</div>
 			<img src={Close} alt="Close" />
