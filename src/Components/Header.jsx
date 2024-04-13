@@ -1,7 +1,7 @@
 import Light from "../assets/icon-sun.svg";
 import Dark from "../assets/icon-moon.svg";
 
-const Header = ({ theme, setTheme }) => {
+const Header = ({ theme, setTheme, addTodo }) => {
 	const toggleTheme = () => {
 		theme === "light"
 			? setTheme("dark")
@@ -30,8 +30,18 @@ const Header = ({ theme, setTheme }) => {
 			</div>
 			<div className="input">
 				<div className="circle"></div>
-				<input type="text" placeholder="Create a new Todo..." />
+				<input
+					onKeyDown={(e) => {
+						if (e.key === "Enter") {
+							addTodo({ name: e.target.value, status: false });
+							e.target.value = "";
+						}
+					}}
+					type="text"
+					placeholder="Create a new Todo..."
+				/>
 			</div>
+			<p>Press Enter to add todo</p>
 		</header>
 	);
 };

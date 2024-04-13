@@ -1,15 +1,24 @@
-const Nav = () => {
+const Nav = ({ selected, setSelected }) => {
+	const handleClick = (e) => {
+		setSelected(e.target.textContent);
+	};
 	return (
 		<nav className="navbar">
 			<ul>
-				<li className="navbar__item">
-					<button>All</button>
+				<li className={`navbar__item ${selected === "All" ? "selected" : ""} `}>
+					<button onClick={handleClick}>All</button>
 				</li>
-				<li className="navbar__item">
-					<button>Active</button>
+				<li
+					className={`navbar__item ${selected === "Active" ? "selected" : ""} `}
+				>
+					<button onClick={handleClick}>Active</button>
 				</li>
-				<li className="navbar__item">
-					<button>Completed</button>
+				<li
+					className={`navbar__item ${
+						selected === "Completed" ? "selected" : ""
+					} `}
+				>
+					<button onClick={handleClick}>Completed</button>
 				</li>
 			</ul>
 		</nav>

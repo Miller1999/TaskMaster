@@ -86,7 +86,7 @@ p
   background-repeat: no-repeat
   background-size: cover
   padding: 2rem
-  gap: 3rem
+  gap: 1rem
   .title
     display: flex
     justify-content: space-between
@@ -170,6 +170,7 @@ p
     display: flex
     align-items: center
     gap: 1rem
+    width: 100%
     button
       cursor: pointer
       background: none
@@ -192,8 +193,13 @@ p
     .todo__text
       text-decoration: line-through
       transition: all .5s
-  img
-    width: 1.5rem
+  .todo__close
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    background: none
+    border: none
 
 .navbar
   display: flex
@@ -215,6 +221,9 @@ p
         font-size: 1.4rem
         @include textButton()
       button:hover
+        color: $highlightColor
+    .selected
+      button
         color: $highlightColor
 
 .hidden

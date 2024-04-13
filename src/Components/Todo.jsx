@@ -1,18 +1,25 @@
 import Close from "../assets/icon-cross.svg";
 
-const Todo = () => {
+const Todo = ({ name, status, todos, completedTodo, deleteTodo }) => {
 	return (
 		<div className="todo">
 			<div
-				className="todo__info"
-				onClick={(e) => {
-					e.target.parentElement.classList.toggle("check");
+				className={`todo__info ${status && "check"}`}
+				onClick={() => {
+					completedTodo(todos, name, status);
 				}}
 			>
 				<button className="circle"></button>
-				<p className="todo__text">Tarea</p>
+				<p className="todo__text">{name}</p>
 			</div>
-			<img src={Close} alt="Close" />
+			<button
+				onClick={() => {
+					deleteTodo(todos, name);
+				}}
+				className="todo__close"
+			>
+				<img src={Close} alt="Close" />
+			</button>
 		</div>
 	);
 };
