@@ -59,8 +59,6 @@ Users should be able to:
 
 I've picked up a ton by playing around with local storage, messing with hooks, and getting the hang of drag-and-drop. About 10 months back, I tackled a similar project, but it was missing cool stuff like drag-and-drop and theme switching.
 
-To see how you can add code snippets, see below:
-
 ```js
 import { useState, useEffect } from "react";
 
@@ -124,6 +122,4 @@ I've really delved into custom hooks lately, and I'm pumped to incorporate them 
 - Frontend Mentor - [@Miller1999](https://www.frontendmentor.io/profile/Miller1999)
 - Twitter - [@miller_arias](https://twitter.com/miller_arias)
 - Github - [@Miller1999](https://github.com/Miller1999)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
