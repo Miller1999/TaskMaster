@@ -1,9 +1,23 @@
 import Close from "../assets/icon-cross.svg";
 
-const Todo = ({ name, status, todos, completedTodo, deleteTodo }) => {
+const Todo = ({
+	name,
+	status,
+	todos,
+	completedTodo,
+	deleteTodo,
+	handleDragStart,
+	handleDragOver,
+	handleDragEnd,
+	index,
+}) => {
 	return (
 		<div className="todo">
 			<div
+				draggable
+				onDragStart={() => handleDragStart(index)}
+				onDragOver={() => handleDragOver(index)}
+				onDragEnd={() => handleDragEnd}
 				className={`todo__info ${status && "check"}`}
 				onClick={() => {
 					completedTodo(todos, name, status);

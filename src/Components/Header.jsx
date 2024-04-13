@@ -33,8 +33,10 @@ const Header = ({ theme, setTheme, addTodo }) => {
 				<input
 					onKeyDown={(e) => {
 						if (e.key === "Enter") {
-							addTodo({ name: e.target.value, status: false });
-							e.target.value = "";
+							if (e.target.value !== "") {
+								addTodo({ name: e.target.value.trim(), status: false });
+								e.target.value = "";
+							}
 						}
 					}}
 					type="text"
